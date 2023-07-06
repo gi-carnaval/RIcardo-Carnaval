@@ -1,5 +1,9 @@
 ## 2023-07-07
 
+### Changed
+
+- Atualiza componentes para receber dados do backend
+
 ### Added
 
 - Adicionado os componentes do projeto utilizando Atomic Design
