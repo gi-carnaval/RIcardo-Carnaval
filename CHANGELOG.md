@@ -3,6 +3,7 @@
 ### Changed
 
 - Atualiza componentes para receber dados do backend
+- Atualiza arquivos de App e Document
 
 ### Added
 
