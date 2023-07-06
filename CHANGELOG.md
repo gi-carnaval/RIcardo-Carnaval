@@ -6,6 +6,7 @@
 
 ### Added
 
+- Adiciona configurações do prismic
 - Adicionado os componentes do projeto utilizando Atomic Design
 
 ## 2023-06-22
