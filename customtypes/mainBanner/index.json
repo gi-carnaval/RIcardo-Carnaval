@@ -1,0 +1,16 @@
+{
+  "id": "mainBanner",
+  "label": "Banner Principal",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "mainImage": {
+        "type": "Image",
+        "config": { "label": "Imagem", "constraint": {}, "thumbnails": [] }
+      },
+      "uid": { "type": "UID", "config": { "label": "uid", "placeholder": "" } }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "jobs",
+  "label": "Trabalhos",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "jobTitle": {
+        "type": "Text",
+        "config": { "label": "Titulo do Trabalhos", "placeholder": "" }
+      },
+      "mainImageJob": {
+        "type": "Image",
+        "config": {
+          "label": "Imagem Principal",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "jobLocale": {
+        "type": "Text",
+        "config": { "label": "Localização", "placeholder": "" }
+      },
+      "jobDate": {
+        "type": "Date",
+        "config": { "label": "Data do Trabalho", "placeholder": "" }
+      }
+    }
+  }
+}

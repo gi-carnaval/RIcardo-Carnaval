@@ -1,0 +1,24 @@
+{
+  "id": "categories",
+  "label": "Categorias",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "categoryName": {
+        "type": "Text",
+        "config": { "label": "Nome da CAtegoria", "placeholder": "" }
+      },
+      "categoryImage": {
+        "type": "Image",
+        "config": {
+          "label": "Imagem da Categoria",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
