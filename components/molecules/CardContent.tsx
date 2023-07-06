@@ -1,18 +1,20 @@
 import { CardCategory } from '../atoms/CardCategory'
 import { CardDate } from '../atoms/CardDate'
 import { CardTitle } from '../atoms/CardTitle'
-import { CardProps } from '../organism/StructureCard'
 
-interface Props {
-  data: CardProps
+export interface CardContentProps {
+  title: String
+  category?: String
+  date?: String
 }
 
-export function CardContent({ data }: Props) {
+export function CardContent({ title, category, date }: CardContentProps) {
+  console.log('Data dentro de Card Conten:')
   return (
     <>
-      <CardTitle data={data.title} />
-      <CardCategory data={data.category} />
-      <CardDate data={data.date} />
+      <CardTitle data={title} />
+      <CardCategory data={category} />
+      <CardDate data={date} />
     </>
   )
 }
