@@ -12,7 +12,7 @@
     "slicemachine": "start-slicemachine"
   },
   "lint-staged": {
-    "src/**/*": [
+    "/**/*": [
       "npm run lint --fix"
     ]
   },
