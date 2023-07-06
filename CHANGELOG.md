@@ -4,6 +4,7 @@
 
 - Atualiza componentes para receber dados do backend
 - Atualiza arquivos de App e Document
+- Atualiza estrutura do projeto
 
 ### Added
 
