@@ -1,4 +1,10 @@
-## [0.0.1] - 2023-06-22
+## 2023-07-07
+
+### Added
+
+- Adicionado os componentes do projeto utilizando Atomic Design
+
+## 2023-06-22
 
 ### Changed
 
