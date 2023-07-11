@@ -8,7 +8,12 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkColor: '#202020',
+        lightColor: '#DEDEDE',
+      },
+    },
     fontFamily: {
       sans: ['montserrat'],
     },
