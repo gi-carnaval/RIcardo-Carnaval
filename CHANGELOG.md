@@ -3,6 +3,7 @@
 ### Changed
 
 - Atualiza configuração do Prismic
+- Atualiza layout mobile responsivo o componente de Cards
 
 ### Added
 
