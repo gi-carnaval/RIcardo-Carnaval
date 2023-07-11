@@ -1,5 +1,9 @@
 ## 2023-07-11
 
+### Changed
+
+- Atualiza configuração do Prismic
+
 ### Added
 
 - Adiciona cor padrão na configuração do Tailwind
