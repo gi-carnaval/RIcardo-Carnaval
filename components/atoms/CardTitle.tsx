@@ -4,7 +4,7 @@ export interface Props {
 
 export function CardTitle({ data }: Props) {
   return (
-    <h3 className="font-medium relative text-4xl justify-center w-11/12 group-hover:flex">
+    <h3 className="md:font-medium font-bold relative md:text-4xl text-xl justify-center w-11/12 group-hover:flex">
       {data}
     </h3>
   )

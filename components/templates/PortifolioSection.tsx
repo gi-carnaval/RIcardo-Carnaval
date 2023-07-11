@@ -1,26 +1,34 @@
 import { SectionH2Title } from '../atoms/SectionH2Title'
-import { PortifolioCard, PortifolioCardProps } from '../organism/PortifolioCard'
+import { PortifolioCard } from '../organism/PortifolioCard'
 
-// const datas = [
-//   { id: 1, title: 'Casamento' },
-//   { id: 2, title: 'Ensaio de Casal' },
-//   { id: 3, title: 'Sessão Gestante' },
-//   { id: 4, title: 'Aniversário' },
-//   { id: 5, title: 'Formatura' },
-//   { id: 6, title: 'Família' },
-// ]
-
-interface Props {
-  data: PortifolioCardProps[]
+export interface PortifolioCardProps {
+  id: string
+  data: {
+    categoryImage: {
+      url: string
+    }
+    categoryName: string
+  }
+  slugs: string[]
 }
 
-export function PortifolioSection({ data }: Props) {
+interface Props {
+  categories: PortifolioCardProps[]
+}
+
+export function PortifolioSection({ categories }: Props) {
   return (
     <>
       <SectionH2Title>Portifólio</SectionH2Title>
-      <div className="grid grid-cols-3 items-center justify-between px-24 gap-11">
-        {data.map((data) => {
-          return <PortifolioCard key={data.data.categoryName} data={data} />
+      <div className="md:grid md:grid-cols-3 items-center justify-between md:px-24 px-5 pb-10 gap-11">
+        {categories.map((category) => {
+          return (
+            <PortifolioCard
+              key={category.id}
+              categoryImage={category.data.categoryImage}
+              categoryName={category.data.categoryName}
+            />
+          )
         })}
       </div>
       <div className="flex justify-center my-24">

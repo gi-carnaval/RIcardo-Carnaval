@@ -1,33 +1,23 @@
+import CardBackground from '../atoms/CardBackground'
 import { CardContent } from '../molecules/CardContent'
 
-export interface PortifolioCardProps {
-  data: {
-    categoryImage: {
-      url: string
-    }
-    categoryName: string
+export interface PortifolioCardContentProps {
+  categoryImage: {
+    url: string
   }
+  categoryName: string
 }
 
-interface Props {
-  data: PortifolioCardProps
-}
-
-export function PortifolioCard({ data }: Props) {
-  console.log('Data em portifolioCard', data)
-
-  const backgroundCard = data.data.categoryImage.url
-  console.log('TEESTE: ', backgroundCard)
+export function PortifolioCard({
+  categoryImage,
+  categoryName,
+}: PortifolioCardContentProps) {
+  const backgroundCard = categoryImage.url
 
   return (
-    <div className="group relative h-96 flex justify-center items-center overflow-hidden cursor-pointer">
-      <div
-        className={`bg-cover bg-center w-full h-full group-hover:opacity-25 group-hover:blur-sm transition-all`}
-        style={{ backgroundImage: `url(${backgroundCard})` }}
-      />
-      <div className="absolute w-full hidden group-hover:flex flex-col items-center text-center justify-center">
-        <CardContent title={data.data.categoryName} />
-      </div>
+    <div className="group relative md:h-96 h-[21rem] flex justify-center md:items-center items-start overflow-hidden cursor-pointer transition ease-in-out delay-150">
+      <CardBackground backgroundCard={backgroundCard} />
+      <CardContent title={categoryName} />
     </div>
   )
 }

@@ -3,5 +3,9 @@ interface Props {
 }
 
 export function CardCategory({ data }: Props) {
-  return <p className="font-normal text-2xl group-hover:block">{data}</p>
+  return (
+    <p className="md:font-normal font-light md:text-2xl text-base group-hover:block">
+      {data}
+    </p>
+  )
 }

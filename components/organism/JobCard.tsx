@@ -1,21 +1,46 @@
+import CardBackground from '../atoms/CardBackground'
+import { CardContent } from '../molecules/CardContent'
+
 export interface JobCardProps {
-  id: number
-  title: String
-  category: String
-  date: String
+  data: {
+    jobDate: string
+    jobLocale: string
+    jobTitle: string
+    category: {
+      slug: string
+    }
+    mainImageJob: {
+      url: string
+    }
+  }
 }
 
 interface Props {
-  data: JobCardProps
+  background: string
+  jobContent: {
+    jobDate: string
+    jobLocale: string
+    jobTitle: string
+    category: {
+      slug: string
+    }
+    categoryJob: string
+    mainImageJob: {
+      url: string
+    }
+  }
 }
 
-export function JobCard({ data }: Props) {
+export function JobCard({ background, jobContent }: Props) {
   return (
-    <div className="group relative h-96 flex justify-center items-center overflow-hidden cursor-pointer transition ease-in-out delay-150">
-      <div className="bg-cover bg-center w-full h-full group-hover:opacity-25 group-hover:blur-sm" />
-      <div className="absolute w-full hidden group-hover:flex flex-col items-center text-center justify-center">
-        {/* <CardContent title={data.data.categoryName} /> */}
-      </div>
+    <div className="group relative h-96 flex justify-center md:items-center items-start overflow-hidden cursor-pointer transition ease-in-out delay-150">
+      <CardBackground backgroundCard={background} />
+
+      <CardContent
+        title={jobContent.jobTitle}
+        category={jobContent.categoryJob}
+        date={jobContent.jobDate}
+      />
     </div>
   )
 }
