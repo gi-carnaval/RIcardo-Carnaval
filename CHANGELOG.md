@@ -1,3 +1,9 @@
+## 2023-07-11
+
+### Added
+
+- Adiciona cor padrão na configuração do Tailwind
+
 ## 2023-07-07
 
 ### Changed
