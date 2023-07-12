@@ -6,8 +6,10 @@ interface LinkNaveMenuProps extends LinkProps {
 
 export function LinkNavMenu(props: LinkNaveMenuProps) {
   return (
-    <Link className="font-semibold text-sm" {...props}>
-      {props.children}
-    </Link>
+    <li className="my-8">
+      <Link className="text-4xl md:font-semibold md:text-sm" {...props}>
+        {props.children}
+      </Link>
+    </li>
   )
 }
