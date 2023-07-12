@@ -1,5 +1,3 @@
-// import Image from 'next/image'
-// import LogoRicardoCarnaval from '@/assets/LogoMobile.png'
 import { NavMenuHeader } from '../molecules/NavMenuHeader'
 
 export function Header() {
