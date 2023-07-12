@@ -2,6 +2,7 @@
 
 ### Changed
 
+- Atualiza layout mobile responsivo da home
 - Retira imagens iniciais do projeto next
 - Atualiza chamadas ao backend e uso dos dados na página home
 - Atualiza caminho do arquivo globals.css
