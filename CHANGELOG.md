@@ -1,5 +1,9 @@
 [Unreleased] 2023-07-11
 
+### Added
+
+- Adiciona pacote @next/fonts ao projeto
+
 ### Changed
 
 - Atualiza importação da fonte utilizada no projeto
