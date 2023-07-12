@@ -26,7 +26,7 @@ export default function Home({ mainBanner, categories, jobs }: Props) {
     <main>
       <Header />
       <div
-        className="bg-center bg-cover md:h-screen h-[45rem] -mt-24 z-0"
+        className="bg-center bg-cover md:h-screen h-[45rem] md:-mt-24 z-0"
         style={{ backgroundImage: `url(${mainBannerUrl})` }}
       />
       <PortifolioSection categories={categories} />
