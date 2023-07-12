@@ -54,7 +54,7 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
   return (
     <>
       <SectionH2Title>Trabalhos</SectionH2Title>
-      <div className="flex md:justify-center gap-6 -mt-16 mb-10 md:overflow-hidden overflow-scroll whitespace-nowrap md:px-4 px-8 text-base">
+      <div className="flex md:justify-center gap-6 -mt-3 mb-10 md:overflow-hidden overflow-scroll whitespace-nowrap md:px-4 px-8 text-base">
         <button
           onClick={() => handleFilterChange('Todos')}
           className={`inline-block ${

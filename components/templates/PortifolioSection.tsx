@@ -31,7 +31,7 @@ export function PortifolioSection({ categories }: Props) {
           )
         })}
       </div>
-      <div className="flex justify-center my-24">
+      <div className="flex justify-center my-6">
         <hr className="border-t border-gray-300 my-4 w-3/4" />
       </div>
     </>

@@ -3,5 +3,7 @@ interface SectionTitleProps {
 }
 
 export function SectionH2Title(props: SectionTitleProps) {
-  return <h2 className="text-4xl text-center my-24">{props.children}</h2>
+  return (
+    <h2 className="text-4xl text-center md:my-24 my-12">{props.children}</h2>
+  )
 }
