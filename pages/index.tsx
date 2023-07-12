@@ -1,12 +1,15 @@
 import { Header } from '@/components/organism/Header'
-import { PortifolioCardProps } from '@/components/organism/PortifolioCard'
-import { JobSection } from '@/components/templates/JobSection'
-import { PortifolioSection } from '@/components/templates/PortifolioSection'
+
+import { JobSection, JobsContentProps } from '@/components/templates/JobSection'
+import {
+  PortifolioCardProps,
+  PortifolioSection,
+} from '@/components/templates/PortifolioSection'
 import { GetServerSidePropsContext } from 'next'
 import { createClient } from 'src/services/prismicio'
 
 interface Props {
-  category: PortifolioCardProps[]
+  categories: PortifolioCardProps[]
   mainBanner: {
     data: {
       mainImage: {
@@ -14,23 +17,24 @@ interface Props {
       }
     }
   }
+  jobs: [JobsContentProps]
 }
 
-export default function Home({ category, mainBanner }: Props) {
-  console.log('Banner -> ', mainBanner.data.mainImage.url)
+export default function Home({ mainBanner, categories, jobs }: Props) {
   const mainBannerUrl = mainBanner.data.mainImage.url
   return (
     <main>
       <Header />
       <div
-        className="bg-main-banner bg-cover h-screen -mt-24 z-0"
+        className="bg-center bg-cover md:h-screen h-[45rem] -mt-24 z-0"
         style={{ backgroundImage: `url(${mainBannerUrl})` }}
       />
-      <PortifolioSection data={category} />
-      <JobSection />
+      <PortifolioSection categories={categories} />
+      <JobSection jobs={jobs} categories={categories} />
     </main>
   )
 }
+
 export async function getServerSideProps({
   previewData,
   res,
@@ -42,12 +46,15 @@ export async function getServerSideProps({
 
   const client = createClient({ previewData })
   try {
-    const category = await client.getAllByType('categories')
+    const categories = await client.getAllByType('categories')
     const mainBanner = await client.getByUID('mainBanner', 'banner')
+    const jobs = await client.getAllByType('jobs')
+
     return {
       props: {
-        category,
+        categories,
         mainBanner,
+        jobs,
       },
     }
   } catch (err) {
