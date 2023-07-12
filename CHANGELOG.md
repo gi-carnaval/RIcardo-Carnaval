@@ -6,6 +6,7 @@
 
 ### Changed
 
+- Atualiza chamada de cores adicionais ao projeto
 - Atualiza importação da fonte utilizada no projeto
 
 [0.0.1] 2023-07-11 
