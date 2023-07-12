@@ -2,6 +2,7 @@
 
 ### Changed
 
+- Atualiza caminho do arquivo globals.css
 - Atualiza configuração do Prismic
 - Atualiza layout mobile responsivo o componente de Cards
 
