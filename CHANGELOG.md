@@ -1,18 +1,9 @@
-[Unreleased] 2023-07-11
-
-### Added
-
-- Adiciona pacote @next/fonts ao projeto
-
+[0.0.1] 2023-07-11 
 ### Changed
 
+- Ajusta o header para ficar fixo no mobile
 - Atualiza chamada de cores adicionais ao projeto
 - Atualiza importação da fonte utilizada no projeto
-
-[0.0.1] 2023-07-11 
-
-### Changed
-
 - Atualiza layout mobile responsivo da home
 - Retira imagens iniciais do projeto next
 - Atualiza chamadas ao backend e uso dos dados na página home
@@ -22,6 +13,7 @@
 
 ### Added
 
+- Adiciona pacote @next/fonts ao projeto
 - Adiciona cor padrão na configuração do Tailwind
 
 ## 2023-07-07
