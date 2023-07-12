@@ -1,4 +1,10 @@
-## 2023-07-11
+[Unreleased] 2023-07-11
+
+### Changed
+
+- Atualiza importação da fonte utilizada no projeto
+
+[0.0.1] 2023-07-11 
 
 ### Changed
 
