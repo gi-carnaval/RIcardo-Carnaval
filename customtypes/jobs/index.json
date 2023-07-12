@@ -26,6 +26,14 @@
       "jobDate": {
         "type": "Date",
         "config": { "label": "Data do Trabalho", "placeholder": "" }
+      },
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "Categoria",
+          "select": "document",
+          "customtypes": ["categories", "jobs"]
+        }
       }
     }
   }
