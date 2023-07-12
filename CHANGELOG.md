@@ -2,6 +2,7 @@
 
 ### Changed
 
+- Retira imagens iniciais do projeto next
 - Atualiza chamadas ao backend e uso dos dados na página home
 - Atualiza caminho do arquivo globals.css
 - Atualiza configuração do Prismic
