@@ -2,6 +2,7 @@
 
 ### Changed
 
+- Atualiza chamadas ao backend e uso dos dados na página home
 - Atualiza caminho do arquivo globals.css
 - Atualiza configuração do Prismic
 - Atualiza layout mobile responsivo o componente de Cards
