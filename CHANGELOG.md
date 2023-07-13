@@ -1,4 +1,11 @@
-[0.0.1] 2023-07-11 
+## [Unreleased] 2023-07-13
+
+### Added
+
+- Adiciona a Galeria no backend
+
+### [0.0.1] 2023-07-11 
+
 ### Changed
 
 - Ajusta o header para ficar fixo no mobile
