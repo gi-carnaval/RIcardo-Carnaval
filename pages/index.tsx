@@ -1,5 +1,3 @@
-import { Header } from '@/components/organism/Header'
-
 import { JobSection, JobsContentProps } from '@/components/templates/JobSection'
 import {
   PortifolioCardProps,
@@ -21,10 +19,10 @@ interface Props {
 }
 
 export default function Home({ mainBanner, categories, jobs }: Props) {
+  console.log('Jobs: ', jobs)
   const mainBannerUrl = mainBanner.data.mainImage.url
   return (
     <main>
-      <Header />
       <div
         className="bg-center bg-cover md:h-screen h-[45rem] md:-mt-24 z-0"
         style={{ backgroundImage: `url(${mainBannerUrl})` }}
