@@ -6,6 +6,7 @@
 
 ### Added
 
+- Adiciona Página de Portifólio
 - Adiciona o componente de footer
 - Adiciona a Galeria no backend
 
