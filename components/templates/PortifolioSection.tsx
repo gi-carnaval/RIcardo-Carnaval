@@ -1,5 +1,6 @@
+import SectionDivider from '../atoms/SectionDivider'
 import { SectionH2Title } from '../atoms/SectionH2Title'
-import { PortifolioCard } from '../organism/PortifolioCard'
+import PortifolioCardGrid from '../organism/PortifolioCardGrid'
 
 export interface PortifolioCardProps {
   id: string
@@ -20,20 +21,8 @@ export function PortifolioSection({ categories }: Props) {
   return (
     <>
       <SectionH2Title>Portifólio</SectionH2Title>
-      <div className="md:grid md:grid-cols-3 items-center justify-between md:px-24 px-5 pb-10 gap-11">
-        {categories.map((category) => {
-          return (
-            <PortifolioCard
-              key={category.id}
-              categoryImage={category.data.categoryImage}
-              categoryName={category.data.categoryName}
-            />
-          )
-        })}
-      </div>
-      <div className="flex justify-center my-6">
-        <hr className="border-t border-gray-300 my-4 w-3/4" />
-      </div>
+      <PortifolioCardGrid columns={3} categories={categories} />
+      <SectionDivider marginY={6} />
     </>
   )
 }
