@@ -1,5 +1,9 @@
 ## [Unreleased] 2023-07-13
 
+### Changed
+
+- Refatora as Seções dos cards, tanto do Portifólio quanto dos Trabalhos
+
 ### Added
 
 - Adiciona a Galeria no backend
