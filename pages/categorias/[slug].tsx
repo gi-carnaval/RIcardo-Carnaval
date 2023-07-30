@@ -48,7 +48,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         filters: [prismic.filter.at('my.jobs.category', slug)],
         fetchLinks: 'categories.categoryName',
       })
-      console.log(job, category)
       return { job, category }
     } catch (error) {
       console.error(error)
@@ -57,7 +56,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const response = await init()
-  console.log('job: ', response)
 
   return {
     props: {

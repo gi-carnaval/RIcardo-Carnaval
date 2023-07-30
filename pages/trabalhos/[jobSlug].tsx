@@ -4,9 +4,9 @@ import { ParsedUrlQuery } from 'querystring'
 import { createClient } from 'src/services/prismicio'
 import { format } from 'date-fns'
 import Gallery from '@/components/templates/Gallery'
+import JobTitle from '@/components/molecules/JobTitle'
 import JobMainImage from '@/components/atoms/JobMainImage'
 import JobDescriptionAndDate from '@/components/molecules/JobDescriptionAndDate'
-import JobTitle from '@/components/molecules/JobTitle'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -24,8 +24,6 @@ interface Props {
 }
 
 export default function Portfolio({ job }: Props) {
-  console.debug('Job: ', job)
-
   const images = job.data.slices[0] ? job.data.slices[0].items : undefined
   const formattedDate = format(new Date(job.data.jobDate), 'dd/MM/yyyy')
 
@@ -55,7 +53,6 @@ export async function getStaticProps({
   const client = createClient({ previewData })
 
   const { jobSlug } = params as ParamsProps
-  console.log('jobSlug: ', jobSlug)
 
   const job = await client.getByUID('jobs', jobSlug)
 

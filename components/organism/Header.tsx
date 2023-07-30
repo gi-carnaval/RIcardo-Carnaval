@@ -1,4 +1,4 @@
-import { NavMenuHeader } from '../molecules/NavMenuHeader'
+import { NavMenuHeader } from './NavMenuHeader'
 
 export function Header() {
   return (

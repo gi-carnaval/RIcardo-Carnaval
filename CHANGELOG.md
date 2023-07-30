@@ -1,7 +1,17 @@
 ## [Unreleased] 2023-07-30
 
+### Added
+
+- Adiciona a galeria de fotos na página de trabalho
+
+### Removed
+
+- Retira todos as mensagens de Log do código
+
 ### Changed
 
+- Ajusta os menus da aplicação e transforma em componente a estrutura de links
+- Altera a página de trabalho, transformando os elementos em componentes
 - Altera os componentes de Portifólio para Categoria
 - Refatora os componentes de Card
 - Ajusta layout mobile

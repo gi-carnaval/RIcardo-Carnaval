@@ -1,10 +1,10 @@
-import { LinkNavMenu } from '@/components/atoms/LinkNavMenu'
 import menuIcon from '@/assets/menuIcon.svg'
 import closeIcon from '@/assets/closeIcon.svg'
 import Image from 'next/image'
 import { useState } from 'react'
 import LogoRicardoCarnaval from '@/assets/LogoMobile.png'
 import Link from 'next/link'
+import { MenuStructure } from '../molecules/MenuStructure'
 
 export function NavMenuHeader() {
   const [open, setOpen] = useState(false)
@@ -34,11 +34,7 @@ export function NavMenuHeader() {
             open ? 'top-16' : '-top-96'
           }`}
         >
-          <LinkNavMenu href="/">Home</LinkNavMenu>
-          <LinkNavMenu href="#">Ricardo Carnaval</LinkNavMenu>
-          <LinkNavMenu href="/portifolio">Portifólio</LinkNavMenu>
-          <LinkNavMenu href="#">Trabalho</LinkNavMenu>
-          <LinkNavMenu href="#">Depoimentos</LinkNavMenu>
+          <MenuStructure />
         </ul>
       </div>
     </nav>

@@ -1,27 +1,13 @@
 import { useEffect, useState } from 'react'
 import { SectionH2Title } from '../atoms/SectionH2Title'
-import { JobCardProps } from '../organism/JobCard'
-import { PortifolioCardProps } from './PortifolioSection'
+import { JobCardFullProps } from '../organism/JobCard'
+import { CategoryCardProps } from './CategorySection'
 import JobCardGrid from '../organism/JobCardGrid'
 import JobFilter from '../organism/JobFilter'
 
-export interface JobsContentProps {
-  data: {
-    jobDate: string
-    jobLocale: string
-    jobTitle: string
-    category: {
-      slug: string
-    }
-    mainImageJob: {
-      url: string
-    }
-  }
-}
-
 interface JobSectionProps {
-  jobs: JobsContentProps[]
-  categories: PortifolioCardProps[]
+  jobs: JobCardFullProps[]
+  categories: CategoryCardProps[]
 }
 
 export function JobSection({ jobs, categories }: JobSectionProps) {
@@ -32,10 +18,9 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
     }
     return newCategory
   })
-  console.log('Category Filter: ', categoryFilter)
 
   const [selectedFilter, setSelectedFilter] = useState<string>()
-  const [filteredData, setFilteredData] = useState<JobCardProps[]>([])
+  const [filteredData, setFilteredData] = useState<JobCardFullProps[]>([])
 
   useEffect(() => {
     handleFilterChange('Todos')
@@ -48,7 +33,7 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
       setFilteredData(jobs) // Exibe todos os elementos quando o filtro está vazio
     } else {
       const filteredObjects = jobs.filter((obj) =>
-        obj.data.category.slug.includes(value),
+        obj.data.category.data.categoryName.includes(value),
       )
       setFilteredData(filteredObjects)
     }
@@ -63,9 +48,8 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
         categoryFilter={categoryFilter}
       />
       <JobCardGrid
-        columns={3}
         filteredJobs={filteredData}
-        categories={categories}
+        // categories={categories}
       />
     </>
   )
