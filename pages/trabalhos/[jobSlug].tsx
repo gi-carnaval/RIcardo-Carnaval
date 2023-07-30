@@ -4,9 +4,9 @@ import { ParsedUrlQuery } from 'querystring'
 import { createClient } from 'src/services/prismicio'
 import { format } from 'date-fns'
 import Gallery from '@/components/templates/Gallery'
+import JobTitle from '@/components/molecules/JobTitle'
 import JobMainImage from '@/components/atoms/JobMainImage'
 import JobDescriptionAndDate from '@/components/molecules/JobDescriptionAndDate'
-import JobTitle from '@/components/molecules/JobTitle'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {

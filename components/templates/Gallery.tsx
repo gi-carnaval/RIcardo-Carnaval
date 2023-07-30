@@ -2,8 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import { Gallery, Item } from 'react-photoswipe-gallery'
 import 'photoswipe/style.css'
-// import { useState } from 'react'
-// import ImageModal from './ImageModal'
 
 interface Props {
   photos?: [
