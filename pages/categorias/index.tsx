@@ -13,7 +13,11 @@ export default function Category({ categories }: Props) {
     <>
       <PageH1Title>Categorias</PageH1Title>
       <div className="px-[10%]">
-        <CategoryCardGrid columns={2} categories={categories} linkTo="/" />
+        <CategoryCardGrid
+          columns={2}
+          categories={categories}
+          linkTo="/categorias"
+        />
       </div>
     </>
   )

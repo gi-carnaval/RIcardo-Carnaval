@@ -1,5 +1,5 @@
 import SectionDivider from '../atoms/SectionDivider'
-import { NavMenuFooter } from '../molecules/NavMenuFooter'
+import { NavMenuFooter } from './NavMenuFooter'
 
 export default function Footer() {
   return (
