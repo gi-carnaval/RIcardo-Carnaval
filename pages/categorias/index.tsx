@@ -11,7 +11,9 @@ interface Props {
 export default function Category({ categories }: Props) {
   return (
     <>
-      <PageH1Title>Categorias</PageH1Title>
+      <div className="top-20">
+        <PageH1Title>Categorias</PageH1Title>
+      </div>
       <div className="px-[10%]">
         <CategoryCardGrid
           columns={2}

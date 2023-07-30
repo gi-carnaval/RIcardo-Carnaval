@@ -25,14 +25,16 @@ interface Props {
 
 export default function Categorias({ job, category }: Props) {
   return (
-    <div>
+    <>
       <div className="flex flex-col justify-center items-center">
-        <PageH1Title>{category.categoryName}</PageH1Title>
+        <div className="md:top-0 top-20 mb-10 relative">
+          <PageH1Title>{category.categoryName}</PageH1Title>
+        </div>
         <div className="w-[98vw]">
           <JobCardGrid filteredJobs={job} />
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
