@@ -52,7 +52,7 @@ interface Props {
 export function JobCard({ background, jobContent, link }: Props) {
   return (
     <Link href={`/trabalhos/${link}`}>
-      <div className="group relative md:h-96 h-[21rem] flex justify-center md:items-center items-start overflow-hidden cursor-pointer transition ease-in-out delay-150">
+      <div className="group relative md:h-96 md:my-0 flex flex-col justify-center items-center overflow-hidden cursor-pointer transition ease-in-out delay-150 my-12">
         <CardBackground backgroundCard={background} />
         <CardContent
           title={jobContent.jobNames}

@@ -1,5 +1,11 @@
 ## [Unreleased] 2023-07-30
 
+### Changed
+
+[TAS-15] - Ajusta o layout mobile do CardJob
+
+## [Released] 2023-07-30
+
 ### Added
 
 - Adiciona a galeria de fotos na página de trabalho
