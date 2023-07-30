@@ -1,4 +1,4 @@
-import { LinkNavMenu } from '@/components/atoms/LinkNavMenu'
+import { MenuStructure } from '../molecules/MenuStructure'
 
 export function NavMenuFooter() {
   return (
@@ -7,11 +7,7 @@ export function NavMenuFooter() {
         <ul
           className={`hidden md:flex md:items-center md:text-center font-normal md:gap-6 md:pb-0 pb-12 md:z-auto z-[-1] md:w-auto md:pl-0 pl-9 `}
         >
-          <LinkNavMenu href="/">Home</LinkNavMenu>
-          <LinkNavMenu href="#">Ricardo Carnaval</LinkNavMenu>
-          <LinkNavMenu href="/portifolio">Portifólio</LinkNavMenu>
-          <LinkNavMenu href="#">Trabalho</LinkNavMenu>
-          <LinkNavMenu href="#">Depoimentos</LinkNavMenu>
+          <MenuStructure />
         </ul>
       </div>
     </nav>
