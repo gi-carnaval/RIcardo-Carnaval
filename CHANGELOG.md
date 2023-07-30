@@ -1,4 +1,12 @@
-## [Unreleased] 2023-07-13
+## [Unreleased] 2023-07-30
+
+### Changed
+
+- Altera os componentes de Portifólio para Categoria
+- Refatora os componentes de Card
+- Ajusta layout mobile
+
+## 2023-07-13
 
 ### Changed
 
