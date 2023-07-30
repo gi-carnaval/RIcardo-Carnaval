@@ -1,4 +1,10 @@
-## [Unreleased] 2023-07-13
+## [Unreleased] 2023-07-30
+
+### Changed
+
+- Altera a página de trabalho, transformando os elementos em componentes
+
+## 2023-07-13
 
 ### Changed
 
