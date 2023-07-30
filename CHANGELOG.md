@@ -2,6 +2,8 @@
 
 ### Changed
 
+- Ajusta a exibição do titulo da página de categorias
+- Ajusta imagem principal da página de trabalho
 [TAS-15] - Ajusta o layout mobile do CardJob
 
 ## [Released] 2023-07-30
