@@ -1,46 +1,65 @@
+import Link from 'next/link'
 import CardBackground from '../atoms/CardBackground'
 import { CardContent } from '../molecules/CardContent'
 
 export interface JobCardProps {
-  data: {
-    jobDate: string
-    jobLocale: string
-    jobTitle: string
-    category: {
-      slug: string
-    }
-    mainImageJob: {
-      url: string
+  jobDate: string
+  jobLocale: string
+  jobTitle: string
+  jobNames: string
+  category: {
+    data: {
+      categoryName: string
     }
   }
+  categoryJob: string
+  description: [
+    {
+      text: string
+    },
+  ]
+  mainImageJob: {
+    url: string
+  }
+  slices: [
+    {
+      items: [
+        {
+          image: {
+            url: string
+            dimensions: {
+              height: number
+              width: number
+            }
+          }
+        },
+      ]
+    },
+  ]
+}
+
+export interface JobCardFullProps {
+  data: JobCardProps
+  uid: string
 }
 
 interface Props {
   background: string
-  jobContent: {
-    jobDate: string
-    jobLocale: string
-    jobTitle: string
-    category: {
-      slug: string
-    }
-    categoryJob: string
-    mainImageJob: {
-      url: string
-    }
-  }
+  jobContent: JobCardProps
+  link: string | undefined
 }
 
-export function JobCard({ background, jobContent }: Props) {
+export function JobCard({ background, jobContent, link }: Props) {
   return (
-    <div className="group relative h-96 flex justify-center md:items-center items-start overflow-hidden cursor-pointer transition ease-in-out delay-150">
-      <CardBackground backgroundCard={background} />
-
-      <CardContent
-        title={jobContent.jobTitle}
-        category={jobContent.categoryJob}
-        date={jobContent.jobDate}
-      />
-    </div>
+    <Link href={`/trabalhos/${link}`}>
+      <div className="group relative md:h-96 h-[21rem] flex justify-center md:items-center items-start overflow-hidden cursor-pointer transition ease-in-out delay-150">
+        <CardBackground backgroundCard={background} />
+        <CardContent
+          title={jobContent.jobNames}
+          category={jobContent.category.data.categoryName}
+          date={jobContent.jobDate}
+        />
+      </div>
+    </Link>
   )
 }

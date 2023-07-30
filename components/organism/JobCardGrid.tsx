@@ -1,38 +1,21 @@
-import { JobsContentProps } from '../templates/JobSection'
-import { PortifolioCardProps } from '../templates/PortifolioSection'
-import { JobCard } from './JobCard'
+import { JobCard, JobCardFullProps } from './JobCard'
 
 interface Props {
-  filteredJobs: JobsContentProps[]
-  categories: PortifolioCardProps[]
-  columns: number
+  filteredJobs: JobCardFullProps[]
 }
 
-export default function JobCardGrid({
-  filteredJobs,
-  categories,
-  columns,
-}: Props) {
-  console.log('Filtered Data: ', filteredJobs)
+export default function JobCardGrid({ filteredJobs }: Props) {
   return (
     <div
-      className={`md:grid md:grid-cols-${columns} items-center justify-between md:px-24 px-5 pb-10 gap-11`}
+      className={`md:grid md:grid-cols-2 items-center justify-between md:px-24 px-5 pb-10 gap-11`}
     >
       {filteredJobs.map((job) => {
-        const categoryJobComplete = categories.filter((category) =>
-          category.slugs[0].includes(job.data.category.slug),
-        )
-
-        const newJob = {
-          ...job.data,
-          categoryJob: categoryJobComplete[0].data.categoryName,
-        }
-
         return (
           <JobCard
             key={job.data.jobTitle}
             background={job.data.mainImageJob.url}
-            jobContent={newJob}
+            jobContent={job.data}
+            link={job.uid}
           />
         )
       })}

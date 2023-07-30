@@ -2,7 +2,11 @@
 
 ### Changed
 
+
 - Altera a página de trabalho, transformando os elementos em componentes
+- Altera os componentes de Portifólio para Categoria
+- Refatora os componentes de Card
+- Ajusta layout mobile
 
 ## 2023-07-13
 
