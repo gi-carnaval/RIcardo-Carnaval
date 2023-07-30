@@ -1,4 +1,25 @@
-[0.0.1] 2023-07-11 
+## [Unreleased] 2023-07-30
+
+### Changed
+
+- Altera os componentes de Portifólio para Categoria
+- Refatora os componentes de Card
+- Ajusta layout mobile
+
+## 2023-07-13
+
+### Changed
+
+- Refatora as Seções dos cards, tanto do Portifólio quanto dos Trabalhos
+
+### Added
+
+- Adiciona Página de Portifólio
+- Adiciona o componente de footer
+- Adiciona a Galeria no backend
+
+### [0.0.1] 2023-07-11 
+
 ### Changed
 
 - Ajusta o header para ficar fixo no mobile

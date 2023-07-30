@@ -11,6 +11,10 @@
         "type": "Text",
         "config": { "label": "Titulo do Trabalhos", "placeholder": "" }
       },
+      "jobNames": {
+        "type": "Text",
+        "config": { "label": "Nomes", "placeholder": "" }
+      },
       "mainImageJob": {
         "type": "Image",
         "config": {
@@ -34,6 +38,20 @@
           "select": "document",
           "customtypes": ["categories", "jobs"]
         }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Descrição",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "gallery": { "type": "SharedSlice" } } }
       }
     }
   }
