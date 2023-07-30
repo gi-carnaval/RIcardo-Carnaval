@@ -11,7 +11,7 @@ interface Props {
 export default function Category({ categories }: Props) {
   return (
     <>
-      <div className="top-20">
+      <div className="md:top-0 top-20 mb-10 relative">
         <PageH1Title>Categorias</PageH1Title>
       </div>
       <div className="px-[10%]">
