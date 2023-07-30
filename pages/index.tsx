@@ -1,13 +1,14 @@
-import { JobSection, JobsContentProps } from '@/components/templates/JobSection'
+import { JobCardFullProps } from '@/components/organism/JobCard'
+import { JobSection } from '@/components/templates/JobSection'
 import {
-  PortifolioCardProps,
-  PortifolioSection,
-} from '@/components/templates/PortifolioSection'
+  CategoryCardProps,
+  CategorySection,
+} from '@/components/templates/CategorySection'
 import { GetServerSidePropsContext } from 'next'
 import { createClient } from 'src/services/prismicio'
 
 interface Props {
-  categories: PortifolioCardProps[]
+  categories: CategoryCardProps[]
   mainBanner: {
     data: {
       mainImage: {
@@ -15,11 +16,10 @@ interface Props {
       }
     }
   }
-  jobs: [JobsContentProps]
+  jobs: JobCardFullProps[]
 }
 
 export default function Home({ mainBanner, categories, jobs }: Props) {
-  console.log('Jobs: ', jobs)
   const mainBannerUrl = mainBanner.data.mainImage.url
   return (
     <main>
@@ -27,7 +27,7 @@ export default function Home({ mainBanner, categories, jobs }: Props) {
         className="bg-center bg-cover md:h-screen h-[45rem] md:-mt-24 z-0"
         style={{ backgroundImage: `url(${mainBannerUrl})` }}
       />
-      <PortifolioSection categories={categories} />
+      <CategorySection categories={categories} />
       <JobSection jobs={jobs} categories={categories} />
     </main>
   )
@@ -46,7 +46,9 @@ export async function getServerSideProps({
   try {
     const categories = await client.getAllByType('categories')
     const mainBanner = await client.getByUID('mainBanner', 'banner')
-    const jobs = await client.getAllByType('jobs')
+    const jobs = await client.getAllByType('jobs', {
+      fetchLinks: 'categories.categoryName',
+    })
 
     return {
       props: {

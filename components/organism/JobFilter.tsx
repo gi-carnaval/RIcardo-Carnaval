@@ -31,7 +31,7 @@ export default function JobFilter({
             className={`inline-block ${
               selectedFilter === category.categorySlug ? 'font-bold' : ''
             }`}
-            onClick={() => handleFilterChange(category.categorySlug)}
+            onClick={() => handleFilterChange(category.categoryName)}
           >
             {category.categoryName}
           </button>
