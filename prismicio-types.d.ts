@@ -75,6 +75,17 @@ interface JobsDocumentData {
    */
   jobTitle: prismic.KeyTextField;
   /**
+   * Nomes field in *Trabalhos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jobs.jobNames
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  jobNames: prismic.KeyTextField;
+  /**
    * Imagem Principal field in *Trabalhos*
    *
    * - **Field Type**: Image
@@ -118,6 +129,17 @@ interface JobsDocumentData {
    *
    */
   category: prismic.ContentRelationshipField<"categories" | "jobs">;
+  /**
+   * Descrição field in *Trabalhos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jobs.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
   /**
    * Slice Zone field in *Trabalhos*
    *

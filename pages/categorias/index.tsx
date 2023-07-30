@@ -1,19 +1,19 @@
 import { PageH1Title } from '@/components/atoms/PageH1Title'
-import PortifolioCardGrid from '@/components/organism/PortifolioCardGrid'
-import { PortifolioCardProps } from '@/components/templates/PortifolioSection'
+import CategoryCardGrid from '@/components/organism/CategoryCardGrid'
+import { CategoryCardProps } from '@/components/templates/CategorySection'
 import { GetServerSidePropsContext } from 'next'
 import { createClient } from 'src/services/prismicio'
 
 interface Props {
-  categories: PortifolioCardProps[]
+  categories: CategoryCardProps[]
 }
 
-export default function Portifolio({ categories }: Props) {
+export default function Category({ categories }: Props) {
   return (
     <>
-      <PageH1Title>Portifólios</PageH1Title>
+      <PageH1Title>Categorias</PageH1Title>
       <div className="px-[10%]">
-        <PortifolioCardGrid columns={2} categories={categories} />
+        <CategoryCardGrid columns={2} categories={categories} linkTo="/" />
       </div>
     </>
   )

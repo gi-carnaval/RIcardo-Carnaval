@@ -1,8 +1,8 @@
 import SectionDivider from '../atoms/SectionDivider'
 import { SectionH2Title } from '../atoms/SectionH2Title'
-import PortifolioCardGrid from '../organism/PortifolioCardGrid'
+import CategoryCardGrid from '../organism/CategoryCardGrid'
 
-export interface PortifolioCardProps {
+export interface CategoryCardProps {
   id: string
   data: {
     categoryImage: {
@@ -14,14 +14,19 @@ export interface PortifolioCardProps {
 }
 
 interface Props {
-  categories: PortifolioCardProps[]
+  categories: CategoryCardProps[]
 }
 
-export function PortifolioSection({ categories }: Props) {
+export function CategorySection({ categories }: Props) {
   return (
     <>
       <SectionH2Title>Portifólio</SectionH2Title>
-      <PortifolioCardGrid columns={3} categories={categories} />
+      <CategoryCardGrid
+        columns={3}
+        categories={categories}
+        linkTo="categorias"
+      />
+
       <SectionDivider marginY={6} />
     </>
   )
