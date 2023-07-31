@@ -2,6 +2,7 @@
 
 ### Changed
 
+[TAS-17] - Altera o layout dos itens do menu e do títulos das páginas
 [TAS-16] - Altera layout do menu mobile com ação de fechar ao redirecionar página
 
 ## 2023-07-30
