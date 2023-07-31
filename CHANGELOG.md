@@ -1,4 +1,10 @@
-## [Unreleased] 2023-07-30
+## [Unreleased] 2023-07-31
+
+### Changed
+
+[TAS-16] - Altera layout do menu mobile com ação de fechar ao redirecionar página
+
+## 2023-07-30
 
 ### Changed
 
