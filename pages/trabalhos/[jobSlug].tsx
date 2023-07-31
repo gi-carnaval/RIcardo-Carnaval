@@ -28,22 +28,20 @@ export default function Portfolio({ job }: Props) {
   const formattedDate = format(new Date(job.data.jobDate), 'dd/MM/yyyy')
 
   return (
-    <>
-      <div className="flex flex-col justify-center items-center">
-        <JobTitle title={job.data.jobTitle} locale={job.data.jobLocale} />
-        <JobMainImage
-          image={job.data.mainImageJob.url}
-          jobTitle={job.data.jobTitle}
-        />
-        <JobDescriptionAndDate
-          description={job.data.description}
-          formattedDate={formattedDate}
-        />
-        <div className="w-full flex justify-center items-center">
-          {images ? <Gallery photos={images} /> : ''}
-        </div>
+    <div className="flex flex-col justify-center items-center">
+      <JobTitle title={job.data.jobTitle} locale={job.data.jobLocale} />
+      <JobMainImage
+        image={job.data.mainImageJob.url}
+        jobTitle={job.data.jobTitle}
+      />
+      <JobDescriptionAndDate
+        description={job.data.description}
+        formattedDate={formattedDate}
+      />
+      <div className="w-full flex justify-center items-center">
+        {images ? <Gallery photos={images} /> : ''}
       </div>
-    </>
+    </div>
   )
 }
 export async function getStaticProps({
