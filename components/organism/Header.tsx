@@ -49,13 +49,8 @@ export const Header = forwardRef<NavMenuHeaderRef, any>((props, ref) => {
                 )}
               </button>
             </div>
-            <ul
-              className={`md:flex md:items-center md:font-bold text-center h-screen md:gap-6 md:pb-0 pb-12 absolute md:static md:bg-transparent bg-lightColor text-darkColor md:z-auto z-[-1] w-full left-0 md:w-auto md:pl-0 pl-0 transition-all duration-500 easy-in pt-8 text-xl md:text-sm ${
-                open ? 'left-0' : '-left-[100%]'
-              }`}
-            >
-              <MenuStructure />
-            </ul>
+
+            <MenuStructure isOpen={open} />
           </div>
         </nav>
       </div>

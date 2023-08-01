@@ -6,10 +6,9 @@ import type { AppProps } from 'next/app'
 import Link from 'next/link'
 import { repositoryName } from 'src/services/prismicio'
 import { Montserrat } from '@next/font/google'
-import { Header } from '@/components/organism/Header'
+import { Header, NavMenuHeaderRef } from '@/components/organism/Header'
 import Footer from '@/components/organism/Footer'
 import { useRouter } from 'next/router'
-import { NavMenuHeaderRef } from '@/components/organism/NavMenuHeader'
 
 const montserrat = Montserrat({
   subsets: ['latin'],

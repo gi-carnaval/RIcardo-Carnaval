@@ -6,10 +6,11 @@ interface LinkNaveMenuProps extends LinkProps {
 
 export function LinkNavMenu(props: LinkNaveMenuProps) {
   return (
-    <li className="my-8 border-b-[1px] border-zinc-600 py-3 font-semibold">
+    <li className="flex flex-col border-b-[1px] border-zinc-600 my-2 py-4 font-semibold justify-center items-center w-3/4 text-center">
       <Link className="" {...props}>
         {props.children}
       </Link>
+      {/* <hr className="border-t border-zinc-600 h-2 mt-4 w-3/4" /> */}
     </li>
   )
 }
