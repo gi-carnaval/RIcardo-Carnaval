@@ -8,6 +8,7 @@ import Pagination from '@/components/organism/Pagination'
 import { useSearchParams } from 'next/navigation'
 import JobCardGrid from '@/components/organism/JobCardGrid'
 import { PageH1Title } from '@/components/atoms/PageH1Title'
+import { useRouter } from 'next/router'
 
 interface allJobParams {
   next_page: string | null
@@ -26,10 +27,18 @@ interface Props {
 }
 
 export default function Trabalhos({ allJobs }: Props) {
+  const router = useRouter()
   const [jobsList, setJobsList] = useState<allJobParams>(allJobs)
 
   const searchParams = useSearchParams()
   const indexPageParam = searchParams.get('page') ?? '1'
+
+  const nextPageFunction = (page: string) => {
+    router.push(`/trabalhos/?page=${Number(page) + 1}`)
+  }
+  const prevPageFunction = (page: string) => {
+    router.push(`/trabalhos/?page=${Number(page) - 1}`)
+  }
 
   const fetchData = async (page: string) => {
     const response = await documentsRepository.getAllJobsWithCategory(
@@ -50,6 +59,8 @@ export default function Trabalhos({ allJobs }: Props) {
       <Pagination
         currentPage={jobsList.page}
         totalPages={jobsList.total_pages}
+        nextPageFunction={nextPageFunction}
+        prevPageFunction={prevPageFunction}
       />
     </div>
   )

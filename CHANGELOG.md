@@ -6,10 +6,11 @@
 
 ### Changed
 
+- [TAS-19] Adicionando páginação com a filtragem dos trabalhos na página Home
 - Move o diretório /components para /src
 - Ajusta a estrutura dos componentes ligados ao Header
 - [TAS-17] Altera o layout dos itens do menu e do títulos das páginas
-- [TAS-16] - Altera layout do menu mobile com ação de fechar ao redirecionar página
+- [TAS-16] Altera layout do menu mobile com ação de fechar ao redirecionar página
 
 ## 2023-07-30
 
