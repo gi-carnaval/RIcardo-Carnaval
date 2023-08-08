@@ -2,9 +2,10 @@
 
 ### Changed
 
+- Move o diretório /components para /src
 - Ajusta a estrutura dos componentes ligados ao Header
-[TAS-17] - Altera o layout dos itens do menu e do títulos das páginas
-[TAS-16] - Altera layout do menu mobile com ação de fechar ao redirecionar página
+- [TAS-17] Altera o layout dos itens do menu e do títulos das páginas
+- [TAS-16] - Altera layout do menu mobile com ação de fechar ao redirecionar página
 
 ## 2023-07-30
 
@@ -12,7 +13,7 @@
 
 - Ajusta a exibição do titulo da página de categorias
 - Ajusta imagem principal da página de trabalho
-[TAS-15] - Ajusta o layout mobile do CardJob
+- [TAS-15] Ajusta o layout mobile do CardJob
 
 ## [Released] 2023-07-30
 
