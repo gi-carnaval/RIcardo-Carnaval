@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { PageH1Title } from '@/components/atoms/PageH1Title'
 import { JobCardFullProps } from '@/components/organism/JobCard'
-import * as prismic from '@prismicio/client'
 import { ParsedUrlQuery } from 'querystring'
 import JobCardGrid from '@/components/organism/JobCardGrid'
+import documentsRepository from 'src/repositories/documentsRepository'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -19,14 +19,16 @@ interface ParamsProps extends ParsedUrlQuery {
 interface Props {
   job: [JobCardFullProps]
   category: {
-    categoryName: string
+    data: {
+      categoryName: string
+    }
   }
 }
 
 export default function Categorias({ job, category }: Props) {
   return (
     <>
-      <PageH1Title>{category.categoryName}</PageH1Title>
+      <PageH1Title>{category.data.categoryName}</PageH1Title>
       <div className="w-[98vw]">
         <JobCardGrid filteredJobs={job} />
       </div>
@@ -37,28 +39,19 @@ export default function Categorias({ job, category }: Props) {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as ParamsProps
 
-  const client = prismic.createClient('ricardo-carnaval')
+  try {
+    const categoryResponse = await documentsRepository.getCategoryBySlug(slug)
+    const jobResponse = await documentsRepository.getJobWithCategory(slug)
 
-  const init = async () => {
-    try {
-      const category = await client.getByID(slug)
-      const job = await client.get({
-        filters: [prismic.filter.at('my.jobs.category', slug)],
-        fetchLinks: 'categories.categoryName',
-      })
-      return { job, category }
-    } catch (error) {
-      console.error(error)
-      return null
+    return {
+      props: {
+        category: categoryResponse.data.results[0],
+        job: jobResponse.data.results,
+      },
     }
-  }
-
-  const response = await init()
-
-  return {
-    props: {
-      job: response?.job.results,
-      category: response?.category.data,
-    },
+  } catch (err) {
+    return {
+      notFound: true,
+    }
   }
 }

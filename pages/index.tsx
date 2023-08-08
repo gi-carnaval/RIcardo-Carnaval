@@ -1,11 +1,11 @@
-import { JobCardFullProps } from '@/components/organism/JobCard'
 import { JobSection } from '@/components/templates/JobSection'
 import {
   CategoryCardProps,
   CategorySection,
 } from '@/components/templates/CategorySection'
 import { GetServerSidePropsContext } from 'next'
-import { createClient } from 'src/services/prismicio'
+import documentsRepository from 'src/repositories/documentsRepository'
+import { JobCardFullProps } from 'src/types/documents'
 
 interface Props {
   categories: CategoryCardProps[]
@@ -28,33 +28,36 @@ export default function Home({ mainBanner, categories, jobs }: Props) {
         style={{ backgroundImage: `url(${mainBannerUrl})` }}
       />
       <CategorySection categories={categories} />
-      <JobSection jobs={jobs} categories={categories} />
+      <JobSection jobs={jobs} categories={categories} hasFilter />
     </main>
   )
 }
 
-export async function getServerSideProps({
-  previewData,
-  res,
-}: GetServerSidePropsContext) {
+export async function getServerSideProps({ res }: GetServerSidePropsContext) {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59',
   )
-
-  const client = createClient({ previewData })
+  const PAGE_SIZE = 6
+  const PAGE_INDEX = 1
   try {
-    const categories = await client.getAllByType('categories')
-    const mainBanner = await client.getByUID('mainBanner', 'banner')
-    const jobs = await client.getAllByType('jobs', {
-      fetchLinks: 'categories.categoryName',
-    })
+    const categoriesResponse = await documentsRepository.getCategories(
+      PAGE_SIZE,
+    )
+    const jobsResponse = await documentsRepository.getAllJobsWithCategory(
+      PAGE_SIZE,
+      PAGE_INDEX,
+    )
+    const mainBannerResponse = await documentsRepository.getByUid(
+      'mainBanner',
+      'banner',
+    )
 
     return {
       props: {
-        categories,
-        mainBanner,
-        jobs,
+        categories: categoriesResponse.data.results,
+        mainBanner: mainBannerResponse.data.results[0],
+        jobs: jobsResponse.data.results,
       },
     }
   } catch (err) {

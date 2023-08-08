@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => {
       router.events.off('routeChangeStart', handleRouteChange)
     }
-  }, [])
+  }, [router.events])
 
   return (
     <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Header ref={navMenuRef} />
           <div
             onClick={() => navMenuRef.current?.closeMenu()}
-            className="top-24 relative"
+            className="md:top-0 top-24 relative"
           >
             <Component {...pageProps} />
           </div>

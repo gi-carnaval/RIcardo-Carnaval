@@ -2,7 +2,7 @@ import { PageH1Title } from '@/components/atoms/PageH1Title'
 import CategoryCardGrid from '@/components/organism/CategoryCardGrid'
 import { CategoryCardProps } from '@/components/templates/CategorySection'
 import { GetServerSidePropsContext } from 'next'
-import { createClient } from 'src/services/prismicio'
+import documentsRepository from 'src/repositories/documentsRepository'
 
 interface Props {
   categories: CategoryCardProps[]
@@ -23,22 +23,18 @@ export default function Category({ categories }: Props) {
   )
 }
 
-export async function getServerSideProps({
-  previewData,
-  res,
-}: GetServerSidePropsContext) {
+export async function getServerSideProps({ res }: GetServerSidePropsContext) {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59',
   )
 
-  const client = createClient({ previewData })
   try {
-    const categories = await client.getAllByType('categories')
+    const categoriesResponse = await documentsRepository.getCategories()
 
     return {
       props: {
-        categories,
+        categories: categoriesResponse.data.results,
       },
     }
   } catch (err) {

@@ -1,14 +1,15 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { Content } from '@prismicio/client'
+import { SliceComponentProps } from '@prismicio/react'
 
 /**
  * Props for `Gallery`.
  */
-export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
+export type GalleryProps = SliceComponentProps<Content.GallerySlice>
 
 /**
  * Component for "Gallery" Slices.
  */
+// eslint-disable-next-line no-undef
 const Gallery = ({ slice }: GalleryProps): JSX.Element => {
   return (
     <section
@@ -17,7 +18,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
     >
       Placeholder component for gallery (variation: {slice.variation}) Slices
     </section>
-  );
-};
+  )
+}
 
-export default Gallery;
+export default Gallery
