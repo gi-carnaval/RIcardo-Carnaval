@@ -26,11 +26,9 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
 
   const nextPageFunction = (page: string) => {
     setPageIndex(Number(page) + 1)
-    console.log('entries next page: ', entries)
   }
   const prevPageFunction = (page: string) => {
     setPageIndex(Number(page) - 1)
-    console.log('entries prev page: ', entries)
   }
 
   const categoryFilter =
@@ -61,9 +59,7 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
 
   useEffect(() => {
     handleFilterChange(selectedFilter)
-  })
-
-  console.log('Entries antes do return: ', entries)
+  }, [])
 
   return (
     <>

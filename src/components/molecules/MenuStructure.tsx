@@ -7,7 +7,7 @@ interface Props {
 export function MenuStructure({ isOpen }: Props) {
   return (
     <ul
-      className={`flex md:flex-row flex-col items-center md:font-bold text-center h-screen md:gap-6 md:pb-0 pb-12 absolute md:static md:bg-transparent bg-lightColor md:text-lightColor text-darkColor md:z-auto z-[-1] w-full left-0 md:w-auto md:pl-0 pl-0 transition-all duration-500 easy-in pt-8 text-xl md:text-sm ${
+      className={`flex md:flex-row md:h-auto flex-col items-center md:font-bold text-center top-24 h-screen md:gap-6 md:pb-0 pb-12 absolute md:static md:bg-transparent bg-lightColor md:text-lightColor text-darkColor md:z-auto z-[-1] w-full left-0 md:w-auto md:pl-0 pl-0 transition-all duration-500 easy-in text-xl md:text-sm ${
         isOpen ? 'left-0' : 'left-[100%]'
       }`}
     >

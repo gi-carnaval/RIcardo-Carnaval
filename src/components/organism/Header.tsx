@@ -23,7 +23,7 @@ export const Header = forwardRef<NavMenuHeaderRef, any>((props, ref) => {
     <header className="bg-darkColor/70 backdrop-blur-md w-full top-0 left-0 fixed md:relative z-10">
       <div className="flex justify-between items-center px-6 md:px-24 md:py-6 h-24">
         <nav className="w-full fixed top-0 left-0">
-          <div className="bg-darkColor md:bg-transparent md:flex items-center justify-between py-4 md:py-6 h-24 md:px-20 px-7">
+          <div className="bg-darkColor md:bg-transparent flex items-center justify-between py-4 md:py-6 h-24 md:px-20 px-7">
             <Link href="/">
               <Image
                 alt="Ricardo Carnaval Logo Manuscrito"
@@ -32,7 +32,7 @@ export const Header = forwardRef<NavMenuHeaderRef, any>((props, ref) => {
                 className="w-48"
               />
             </Link>
-            <div className="absolute right-8 top-6 cursor-pointer md:hidden ">
+            <div className="cursor-pointer md:hidden ">
               <button onClick={toggleMenu}>
                 {open ? (
                   <Image
