@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
-import { JobCardFullProps } from '@/components/organism/JobCard'
 import { ParsedUrlQuery } from 'querystring'
-import { createClient } from 'src/services/prismicio'
 import { format } from 'date-fns'
 import Gallery from '@/components/templates/Gallery'
 import JobTitle from '@/components/molecules/JobTitle'
 import JobMainImage from '@/components/atoms/JobMainImage'
 import JobDescriptionAndDate from '@/components/molecules/JobDescriptionAndDate'
+import documentsRepository from 'src/repositories/documentsRepository'
+import { JobCardFullProps } from 'src/types/documents'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -26,7 +26,6 @@ interface Props {
 export default function Portfolio({ job }: Props) {
   const images = job.data.slices[0] ? job.data.slices[0].items : undefined
   const formattedDate = format(new Date(job.data.jobDate), 'dd/MM/yyyy')
-
   return (
     <div className="flex flex-col justify-center items-center">
       <JobTitle title={job.data.jobTitle} locale={job.data.jobLocale} />
@@ -44,17 +43,12 @@ export default function Portfolio({ job }: Props) {
     </div>
   )
 }
-export async function getStaticProps({
-  previewData,
-  params,
-}: GetStaticPropsContext) {
-  const client = createClient({ previewData })
-
+export async function getStaticProps({ params }: GetStaticPropsContext) {
   const { jobSlug } = params as ParamsProps
 
-  const job = await client.getByUID('jobs', jobSlug)
+  const jobResponse = await documentsRepository.getByUid('jobs', jobSlug)
 
   return {
-    props: { job },
+    props: { job: jobResponse.data.results[0] },
   }
 }
