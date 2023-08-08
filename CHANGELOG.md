@@ -1,5 +1,9 @@
 ## [Unreleased] 2023-07-31
 
+### Added
+
+[TAS-18] - Adiciona funcionalidade de paginação na página de trabalhos
+
 ### Changed
 
 - Move o diretório /components para /src
