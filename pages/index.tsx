@@ -28,7 +28,7 @@ export default function Home({ mainBanner, categories, jobs }: Props) {
         style={{ backgroundImage: `url(${mainBannerUrl})` }}
       />
       <CategorySection categories={categories} />
-      <JobSection jobs={jobs} categories={categories} hasFilter />
+      <JobSection jobs={jobs} categories={categories} />
     </main>
   )
 }
@@ -38,14 +38,16 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59',
   )
-  const PAGE_SIZE = 6
+  const CATEGORY_PAGE_SIZE = 6
+  const JOBS_PAGE_SIZE = 10
   const PAGE_INDEX = 1
+
   try {
     const categoriesResponse = await documentsRepository.getCategories(
-      PAGE_SIZE,
+      CATEGORY_PAGE_SIZE,
     )
     const jobsResponse = await documentsRepository.getAllJobsWithCategory(
-      PAGE_SIZE,
+      JOBS_PAGE_SIZE,
       PAGE_INDEX,
     )
     const mainBannerResponse = await documentsRepository.getByUid(

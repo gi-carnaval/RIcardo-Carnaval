@@ -1,18 +1,21 @@
 'use client'
-import { useRouter, useSearchParams } from 'next/navigation'
 import React from 'react'
 
 interface PaginationProps {
   currentPage: number
   totalPages: number
+  nextPageFunction: (page: string) => void
+  prevPageFunction: (page: string) => void
   // onPageChange: (pageNumber: number) => void
 }
 
-const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-
-  const page = searchParams.get('page') ?? '1'
+const Pagination: React.FC<PaginationProps> = ({
+  totalPages,
+  currentPage,
+  nextPageFunction,
+  prevPageFunction,
+}) => {
+  const page = String(currentPage) ?? '1'
   return (
     <nav className="flex items-center justify-center mt-6">
       <ul className="flex space-x-2">
@@ -24,7 +27,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
                 : 'opacity-100 cursor-pointer'
             } rounded-lg px-3 py-1 text-lightColor`}
             onClick={() => {
-              router.push(`/trabalhos/?page=${Number(page) - 1}`)
+              prevPageFunction(page)
             }}
             disabled={Number(page) === 1}
           >
@@ -40,7 +43,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
                   : 'text-lightColor opacity-60'
               } rounded-lg px-3 py-1`}
               onClick={() => {
-                router.push(`/trabalhos/?page=${Number(index + 1)}`)
+                nextPageFunction(String(index))
               }}
             >
               {index + 1}
@@ -55,7 +58,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
                 : 'opacity-100 cursor-pointer'
             } rounded-lg px-3 py-1 text-lightColor`}
             onClick={() => {
-              router.push(`/trabalhos/?page=${Number(page) + 1}`)
+              nextPageFunction(page)
             }}
             disabled={Number(page) === totalPages}
           >
