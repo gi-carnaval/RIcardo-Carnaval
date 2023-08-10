@@ -4,16 +4,14 @@ import React from 'react'
 interface PaginationProps {
   currentPage: number
   totalPages: number
-  nextPageFunction: (page: string) => void
-  prevPageFunction: (page: string) => void
+  changePageIndex: (page: number) => void
   // onPageChange: (pageNumber: number) => void
 }
 
 const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   currentPage,
-  nextPageFunction,
-  prevPageFunction,
+  changePageIndex,
 }) => {
   const page = String(currentPage) ?? '1'
   return (
@@ -27,7 +25,7 @@ const Pagination: React.FC<PaginationProps> = ({
                 : 'opacity-100 cursor-pointer'
             } rounded-lg px-3 py-1 text-lightColor`}
             onClick={() => {
-              prevPageFunction(page)
+              changePageIndex(Number(page) - 1)
             }}
             disabled={Number(page) === 1}
           >
@@ -43,7 +41,7 @@ const Pagination: React.FC<PaginationProps> = ({
                   : 'text-lightColor opacity-60'
               } rounded-lg px-3 py-1`}
               onClick={() => {
-                nextPageFunction(String(index))
+                changePageIndex(Number(index) + 1)
               }}
             >
               {index + 1}
@@ -58,7 +56,7 @@ const Pagination: React.FC<PaginationProps> = ({
                 : 'opacity-100 cursor-pointer'
             } rounded-lg px-3 py-1 text-lightColor`}
             onClick={() => {
-              nextPageFunction(page)
+              changePageIndex(Number(page) + 1)
             }}
             disabled={Number(page) === totalPages}
           >

@@ -30,7 +30,7 @@ export default function JobFilter({
             <button
               key={index}
               className={`inline-block ${
-                selectedFilter === category.categorySlug ? 'font-bold' : ''
+                selectedFilter === category.categoryName ? 'font-bold' : ''
               }`}
               onClick={() => handleFilterChange(category.categoryName)}
             >
