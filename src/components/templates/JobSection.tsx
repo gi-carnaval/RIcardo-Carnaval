@@ -24,13 +24,8 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
   )
   const [selectedFilter, setSelectedFilter] = useState<string>('Todos')
 
-  const nextPageFunction = (page: string) => {
-    setPageIndex(Number(page) + 1)
-    console.log('entries next page: ', entries)
-  }
-  const prevPageFunction = (page: string) => {
-    setPageIndex(Number(page) - 1)
-    console.log('entries prev page: ', entries)
+  const changePageIndex = (page: number) => {
+    setPageIndex(page)
   }
 
   const categoryFilter =
@@ -43,9 +38,7 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
       return newCategory
     })
 
-  const handleFilterChange = (value: string) => {
-    setSelectedFilter(value)
-
+  function filteringJob(value: string) {
     if (value === 'Todos') {
       setEntries(jobs.slice(listStart, listEnd))
       setTotalPages(Math.ceil(jobs.length / perPage))
@@ -57,6 +50,11 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
       setEntries(filteredObjects.slice(listStart, listEnd))
       setTotalPages(Math.ceil(filteredObjects.length / perPage))
     }
+  }
+
+  const handleFilterChange = (value: string) => {
+    setSelectedFilter(value)
+    filteringJob(value)
   }
 
   useEffect(() => {
@@ -76,8 +74,7 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
       <Pagination
         currentPage={pageIndex}
         totalPages={totalPages}
-        nextPageFunction={nextPageFunction}
-        prevPageFunction={prevPageFunction}
+        changePageIndex={changePageIndex}
       />
     </>
   )
