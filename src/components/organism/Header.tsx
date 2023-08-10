@@ -30,6 +30,7 @@ export const Header = forwardRef<NavMenuHeaderRef, any>((props, ref) => {
                 src={LogoRicardoCarnaval}
                 height={50}
                 className="w-48"
+                priority={true}
               />
             </Link>
             <div className="cursor-pointer md:hidden ">
@@ -39,12 +40,14 @@ export const Header = forwardRef<NavMenuHeaderRef, any>((props, ref) => {
                     src={closeIcon}
                     width={24}
                     alt="Botão para fechar menu"
+                    priority={false}
                   />
                 ) : (
                   <Image
                     src={menuIcon}
                     width={30}
                     alt="Botão para abrir menu"
+                    priority={false}
                   />
                 )}
               </button>

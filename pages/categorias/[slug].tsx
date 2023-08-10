@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { PageH1Title } from '@/components/atoms/PageH1Title'
-import { JobCardFullProps } from '@/components/organism/JobCard'
 import { ParsedUrlQuery } from 'querystring'
 import JobCardGrid from '@/components/organism/JobCardGrid'
 import documentsRepository from 'src/repositories/documentsRepository'
+import { JobCardFullProps } from 'src/types/documents'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   try {
     const categoryResponse = await documentsRepository.getCategoryBySlug(slug)
-    const jobResponse = await documentsRepository.getJobWithCategory(slug)
+    const jobResponse = await documentsRepository.getJobWithCategory(slug, 6)
 
     return {
       props: {

@@ -29,8 +29,11 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
     'public, s-maxage=10, stale-while-revalidate=59',
   )
 
+  const PAGE_SIZE = 6
   try {
-    const categoriesResponse = await documentsRepository.getCategories()
+    const categoriesResponse = await documentsRepository.getCategories(
+      PAGE_SIZE,
+    )
 
     return {
       props: {

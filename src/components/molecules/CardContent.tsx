@@ -5,7 +5,7 @@ import { CardTitle } from '../atoms/CardTitle'
 export interface CardContentProps {
   title: string
   category?: string
-  date: string
+  date?: string
 }
 
 export function CardContent({ title, category, date }: CardContentProps) {

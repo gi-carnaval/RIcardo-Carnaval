@@ -12,6 +12,7 @@ export default function CardBackground({ backgroundCard }: Props) {
       width={600}
       height={500}
       className="rounded-md w-full md:group-hover:opacity-25 md:group-hover:blur-sm transition-all object-cover"
+      priority={false}
     />
   )
 }

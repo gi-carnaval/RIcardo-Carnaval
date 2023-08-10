@@ -47,6 +47,7 @@ const GalleryPhotos = ({ photos }: Props) => {
                     src={photo.image.url}
                     width={photo.image.dimensions.width}
                     height={photo.image.dimensions.height}
+                    priority={false}
                   />
                 )}
               </Item>

@@ -14,6 +14,7 @@ export default function JobMainImage({ image, jobTitle }: Props) {
         width={1000}
         height={500}
         className="w-full items-center md:-mt-44 object-cover"
+        priority={false}
       />
     </div>
   )
