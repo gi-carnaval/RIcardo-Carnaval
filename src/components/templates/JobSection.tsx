@@ -38,7 +38,9 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
       return newCategory
     })
 
-  function filteringJob(value: string) {
+  const handleFilterChange = (value: string) => {
+    setSelectedFilter(value)
+
     if (value === 'Todos') {
       setEntries(jobs.slice(listStart, listEnd))
       setTotalPages(Math.ceil(jobs.length / perPage))
@@ -50,11 +52,6 @@ export function JobSection({ jobs, categories }: JobSectionProps) {
       setEntries(filteredObjects.slice(listStart, listEnd))
       setTotalPages(Math.ceil(filteredObjects.length / perPage))
     }
-  }
-
-  const handleFilterChange = (value: string) => {
-    setSelectedFilter(value)
-    filteringJob(value)
   }
 
   useEffect(() => {

@@ -33,11 +33,8 @@ export default function Trabalhos({ allJobs }: Props) {
   const searchParams = useSearchParams()
   const indexPageParam = searchParams.get('page') ?? '1'
 
-  const nextPageFunction = (page: string) => {
-    router.push(`/trabalhos/?page=${Number(page) + 1}`)
-  }
-  const prevPageFunction = (page: string) => {
-    router.push(`/trabalhos/?page=${Number(page) - 1}`)
+  const changePageIndex = (page: number) => {
+    router.push(`/trabalhos/?page=${page}`)
   }
 
   const fetchData = async (page: string) => {
@@ -59,8 +56,7 @@ export default function Trabalhos({ allJobs }: Props) {
       <Pagination
         currentPage={jobsList.page}
         totalPages={jobsList.total_pages}
-        nextPageFunction={nextPageFunction}
-        prevPageFunction={prevPageFunction}
+        changePageIndex={changePageIndex}
       />
     </div>
   )
