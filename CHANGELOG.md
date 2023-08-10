@@ -2,10 +2,12 @@
 
 ### Added
 
+
 [TAS-18] - Adiciona funcionalidade de paginação na página de trabalhos
 
 ### Changed
 
+- [TAS-20] Adicionando negrito em filtro ativo na página home
 - [TAS-19] Adicionando páginação com a filtragem dos trabalhos na página Home
 - Move o diretório /components para /src
 - Ajusta a estrutura dos componentes ligados ao Header
