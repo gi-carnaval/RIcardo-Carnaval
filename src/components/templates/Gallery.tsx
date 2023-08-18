@@ -36,8 +36,8 @@ const GalleryPhotos = ({ photos }: Props) => {
               <Item
                 original={photo.image.url}
                 thumbnail={photo.image.url}
-                width={photo.image.dimensions.width}
-                height={photo.image.dimensions.height}
+                width={photo.image.dimensions.width - 200}
+                height={photo.image.dimensions.height - 200}
               >
                 {({ ref, open }) => (
                   <Image
@@ -45,9 +45,8 @@ const GalleryPhotos = ({ photos }: Props) => {
                     onClick={open}
                     alt={photo.image.url}
                     src={photo.image.url}
-                    width={photo.image.dimensions.width}
-                    height={photo.image.dimensions.height}
-                    priority={false}
+                    width={photo.image.dimensions.width - 1000}
+                    height={photo.image.dimensions.height - 1000}
                   />
                 )}
               </Item>

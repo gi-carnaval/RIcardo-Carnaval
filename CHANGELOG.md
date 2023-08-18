@@ -1,4 +1,10 @@
-## [Unreleased] 2023-07-31
+## [Unreleased] 2023-08-16
+
+### Added
+
+- Adiciona revalidate na página de trabalho individual
+
+## [Released] 2023-07-31
 
 ### Added
 

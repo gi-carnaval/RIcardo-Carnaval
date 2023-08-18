@@ -50,5 +50,6 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 
   return {
     props: { job: jobResponse.data.results[0] },
+    revalidate: 60 * 30, // 30 minutos
   }
 }

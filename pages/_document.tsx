@@ -5,6 +5,11 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <script
+            async
+            defer
+            src="https://static.cdn.prismic.io/prismic.js?new=true&repo=ricardo-carnaval"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
             rel="stylesheet"
