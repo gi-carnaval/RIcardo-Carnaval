@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         category: categoryResponse.data.results[0],
         job: jobResponse.data.results,
       },
+      revalidate: 10,
     }
   } catch (err) {
     return {
